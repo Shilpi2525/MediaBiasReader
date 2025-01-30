@@ -6,7 +6,6 @@ from typing import  Annotated
 import operator
 from openai import OpenAI
 from langgraph.graph import START, END, StateGraph
-from IPython.display import Image, display
 from langchain_core.runnables import RunnableConfig
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_community.tools.tavily_search import TavilySearchResults
