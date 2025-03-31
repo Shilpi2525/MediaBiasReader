@@ -29,10 +29,20 @@ MAX_RESULTS = 5
 #llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
 try:
-    llm = ChatOpenAI(model="gpt-4", temperature=0)
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",",
+        messages=[{"role": "user", "content": "Hello!"}]
+    )
+    print(response.choices[0].message.content)
 except Exception as e:
-    st.error(f"Error initializing ChatOpenAI: {e}")
+    print(f"Error: {e}")
+
+
+
+
 
 
 
