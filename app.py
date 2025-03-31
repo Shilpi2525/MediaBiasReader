@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 from rag import graph_streamer
 
