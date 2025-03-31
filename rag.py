@@ -26,7 +26,7 @@ os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
 MAX_RESULTS = 5
 
 # set the openai model
-#llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
