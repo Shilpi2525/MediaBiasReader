@@ -28,24 +28,6 @@ MAX_RESULTS = 5
 # set the openai model
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
-
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-
-try:
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": "Hello!"}]
-    )
-    print(response.choices[0].message.content)
-except Exception as e:
-    print(f"Error: {e}")
-
-
-
-
-
-
-
 # create client
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 # tavily search
