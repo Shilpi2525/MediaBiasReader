@@ -10,22 +10,6 @@ st.title("BiasReader")
 
 # set the image
 st.image(IMAGE_ADDRESS)
-
-from openai import OpenAI
-
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-
-try:
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": "Hello!"}]
-    )
-    print(response.choices[0].message.content)
-except Exception as e:
-    print(f"Error: {e}")
-
-
-
 # add your topic
 user_text = st.text_input("Please Add Your Topic")
 
