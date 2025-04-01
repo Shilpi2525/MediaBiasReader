@@ -44,7 +44,7 @@ def search_web(state: BotState):
     hot_topic = state["messages"]
 
     # Search
-    search_docs = tavily_search.invoke(pt.SEARCH_QUERY.format(topic = hot_topic))
+    search_docs = tavily_client.search(pt.SEARCH_QUERY.format(topic = hot_topic))
 
      # Format
     formatted_search_docs = "\n\n---\n\n".join(
