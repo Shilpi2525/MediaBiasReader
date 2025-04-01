@@ -8,7 +8,7 @@ from openai import OpenAI
 from langgraph.graph import START, END, StateGraph
 from langchain_core.runnables import RunnableConfig
 from langgraph.checkpoint.memory import MemorySaver
-from tavily import tavily_client
+from tavily import TavilyClient
 from langchain_community.tools.tavily_search import TavilySearchResults
 import base64
 import streamlit as st
@@ -32,7 +32,12 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 # create client
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 # tavily search
+tavily_client = TavilyClient(api_key=os.environ["TAVILY_API_KEY"])
+
+#response = tavily_client.search(hot_topic)
+
 tavily_search = TavilySearchResults(max_results = MAX_RESULTS)
+
 
 # this is be default has the messages and add_messages reducers
 class BotState(MessagesState):
@@ -46,6 +51,7 @@ def search_web(state: BotState):
 
     # Search
     search_docs = tavily_client.search(pt.SEARCH_QUERY.format(topic = hot_topic))
+    
 
      # Format
     formatted_search_docs = "\n\n---\n\n".join(
