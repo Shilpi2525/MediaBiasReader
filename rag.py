@@ -8,6 +8,7 @@ from openai import OpenAI
 from langgraph.graph import START, END, StateGraph
 from langchain_core.runnables import RunnableConfig
 from langgraph.checkpoint.memory import MemorySaver
+from tavily import TavilyClient
 from langchain_community.tools.tavily_search import TavilySearchResults
 import base64
 import streamlit as st
