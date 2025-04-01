@@ -56,7 +56,7 @@ def search_web(state: BotState):
     formatted_search_docs = "\n\n---\n\n".join(
         [
             f'<Document href="{doc["url"]}"/>\n{doc["content"]}\n</Document>'
-            for doc in search_docs
+            for doc in search_docs['results']
         ]
     )
 
