@@ -31,10 +31,9 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 # create client
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
 # tavily search
 tavily_client = TavilyClient(api_key=os.environ["TAVILY_API_KEY"])
-
-#response = tavily_client.search(hot_topic)
 
 tavily_search = TavilySearchResults(max_results = MAX_RESULTS)
 
