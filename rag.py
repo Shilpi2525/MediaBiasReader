@@ -46,7 +46,7 @@ class BotState(MessagesState):
 
 def search_web(state: BotState):
 
-    hot_topic = state["messages"]
+    hot_topic = state["messages"][-1].content
 
     # Search
     search_docs = tavily_client.search(pt.SEARCH_QUERY.format(topic = hot_topic))
